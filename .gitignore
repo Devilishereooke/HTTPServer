@@ -1,0 +1,6 @@
+# Java build output
+out/
+
+# Optional OS / editor noise
+.DS_Store
+*.log
