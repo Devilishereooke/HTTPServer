@@ -57,15 +57,15 @@ public class HttpServer {
 
         // 3. Build HTTP response
         String response = 
-                    "HTTP/1.1 200 OK\n" + 
-                    "Content-Type: text/plain\n" +
-                    "Content-Length: " + responseBody.length() + "\n" +
-                    "\n" + 
+                    "HTTP/1.1 200 OK\r\n" + 
+                    "Content-Type: text/plain\r\n" +
+                    "Content-Length: " + responseBody.length() + "\r\n" +
+                    "\r\n" + 
                     responseBody;
 
         // 4. Send response
         outputStream.write(response.getBytes());
-        outputStream.flush();  // cleaning the outputstream
+        outputStream.flush();  // ensuring to send the response before closing the socket
 
         clientSocket.close();  // closing the socket
     }
